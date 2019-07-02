@@ -9,10 +9,13 @@
 
       <center>
           <h1>Hls.js demo - basic usage</h1>
-          <video height="600" id="video" controls ></video>
+          <video height="600" onload="doWhatYouNeedTo()" id="video" controls ></video>
       </center>
 
       <script>
+        doWhatYouNeedTo(){
+          video.play();
+        }
         if(Hls.isSupported()) {
           var video = document.getElementById('video');
           var hls = new Hls();
@@ -21,7 +24,7 @@
           hls.attachMedia(video);
           hls.on(Hls.Events.MANIFEST_PARSED,function() {
           
-            video.play();
+            //video.play();
         });
        }
        // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
