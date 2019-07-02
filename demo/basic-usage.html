@@ -5,11 +5,11 @@
   </head>
 
   <body>
-      <script src="https://video-dev.github.io/hls.js/dist/hls.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
       <center>
           <h1>Hls.js demo - basic usage</h1>
-          <video height="600" id="video" controls autoplay></video>
+          <video height="600" id="video" controls ></video>
       </center>
 
       <script>
@@ -21,7 +21,7 @@
           hls.attachMedia(video);
           hls.on(Hls.Events.MANIFEST_PARSED,function() {
           
-           // video.play();
+            video.play();
         });
        }
        // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
