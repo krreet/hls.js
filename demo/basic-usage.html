@@ -19,7 +19,9 @@
           var video = document.getElementById('video');
           var hls = new Hls();
         //  hls.loadSource('https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8');
-            hls.loadSource('https://wowzaprod254-i.akamaihd.net/hls/live/772294/2b52c9fe/playlist.m3u8');
+         //   hls.loadSource('https://wowzaprod254-i.akamaihd.net/hls/live/772294/2b52c9fe/playlist.m3u8');
+         
+           hls.loadSource('http://sports.bdixsports.live:1935/live/sonysix.stream/playlist.m3u8');
           hls.attachMedia(video);
           hls.on(Hls.Events.MANIFEST_PARSED,function() {
          
