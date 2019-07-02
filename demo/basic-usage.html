@@ -13,9 +13,6 @@
       </center>
 
       <script>
-        function doWhatYouNeedTo(){
-          video.play();
-        }
         if(Hls.isSupported()) {
           var video = document.getElementById('video');
           var hls = new Hls();
@@ -23,7 +20,9 @@
             hls.loadSource('https://wowzaprod254-i.akamaihd.net/hls/live/772294/2b52c9fe/playlist.m3u8');
           hls.attachMedia(video);
           hls.on(Hls.Events.MANIFEST_PARSED,function() {
-          
+          video.addEventListener('loadeddata', function() {
+          video.play();
+             }, false);
             //video.play();
         });
        }
